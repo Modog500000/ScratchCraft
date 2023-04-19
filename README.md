@@ -3,6 +3,9 @@
 ScratchCraft is an extension for adacraft. It adds the ability to send commands from scratch into minecraft with the Computer Craft Mod.
 It should work in other scratch mods as well.
 
+
+### Links
+
 [Adacraft](https://adacraft.org)
 
 [Example project in Adacraft](https://adacraft.org/studio/?project=a8c3a082&extension=https%3A%2F%2Fscratchcraft.modog500000.repl.co%2Fbeta.js)
