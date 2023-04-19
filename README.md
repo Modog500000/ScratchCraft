@@ -15,9 +15,11 @@ It should work in other scratch mods as well.
 
 ### Blocks
 Send data to WebSocket block 
+
 ![block](https://github.com/Modog500000/ScratchCraft/blob/main/src/resources/image_2023-04-18_194947656.png?raw=true)
 
 Block that tells you whether or not you are connected to a WebSocket, Will be more usefull when Send and Connect block are added.
+
 ![block](https://github.com/Modog500000/ScratchCraft/blob/main/src/resources/block2.png?raw=true)
 
 ### Credits
