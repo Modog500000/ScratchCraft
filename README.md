@@ -13,6 +13,19 @@ It should work in other scratch mods as well.
 [CC Tweaked](https://tweaked.cc)
 
 
+### Geting Started
+
+First things first you will need three things, a scratch project with the extension, a server, and minecraft with CC Tweaked installed.
+
+1. Open a compatible scratch mod, some of these include:
+  Adacraft
+  Turbowarp
+
+2. Click add extensions, scroll to the bottom and click custom extension, then put in the link "https://scratchcraft.modog500000.repl.co/beta.js"
+
+3. Go to [replit](https://replit.com) and create a new replit, you need to make an account if you dont have one. Make it a Node.Js project. Create
+or edit a file named index.js and add the code from server index.
+
 ### Blocks
 Send data to WebSocket block 
 
