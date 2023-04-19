@@ -20,3 +20,8 @@ Send data to WebSocket block
 Block that tells you whether or not you are connected to a WebSocket, Will be more usefull when Send and Connect block are added.
 ![block](https://github.com/Modog500000/ScratchCraft/blob/main/src/resources/block2.png?raw=true)
 
+### Credits
+Most of this extension was made by peicing parts together and bugtesting.
+
+Rixxyx Used their extension as a reference for making extensions
+ogadaki And other contibuters to Adacraft for the amazing platform that this extension was made for!
