@@ -23,6 +23,6 @@ Block that tells you whether or not you are connected to a WebSocket, Will be mo
 ### Credits
 Most of this extension was made by peicing parts together and bugtesting.
 
-Rixxyx Used their extension as a reference for making extensions
+Rixxyx- Used their extension as a reference for making extensions
 
-ogadaki And other contibuters to Adacraft for the amazing platform that this extension was made for!
+ogadaki and other contibuters to Adacraft- for the amazing platform that this extension was made for!
