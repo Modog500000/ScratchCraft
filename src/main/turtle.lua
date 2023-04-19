@@ -1,5 +1,6 @@
 os.loadAPI("json")
-local ws,err = http.websocket("wss://Turtle-WEBSOCKET.modog500000.repl.co")
+local web = ""
+local ws,err = http.websocket(web)
 if ws then
     while true do
         local msg = ws.receive()
