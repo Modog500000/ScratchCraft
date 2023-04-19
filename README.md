@@ -26,6 +26,12 @@ First things first you will need three things, a scratch project with the extens
 3. Go to [replit](https://replit.com) and create a new replit, you need to make an account if you dont have one. Make it a Node.Js project. Create
 or edit a file named index.js and add the code from server index.
 
+4. Launch minecraft with CC Tweaked installed, put down a computer and run "pastebin run 7keUMF7p" then the computer will restart. Click terminate in the
+top left, then run "edit startup" then in the startup the second line will say " local web = "" " put in the webview link in the quotation marks and replace https with wss. Ex: local web = "wss://scratchcraft.modog500000.repl.co"
+
+5. In scratch grab the Send data to block and in the link area put in your websocket "wss://scratchcraft.modog500000.repl.co" then any text must have return before it then any code in lua and it will run it. Do NOT send empty data or your script on the computer will crash. If it crashes then restart
+the computer.
+
 ### Blocks
 Send data to WebSocket block 
 
