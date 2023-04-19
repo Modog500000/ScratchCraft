@@ -43,6 +43,10 @@ Block that tells you whether or not you are connected to a WebSocket, Will be mo
 
 ![block](https://github.com/Modog500000/ScratchCraft/blob/main/src/resources/block2.png?raw=true)
 
+Block that sends data with return concatenated to the front. TLDR sends a command that is forced to run as code in lua.
+
+![block](https://github.com/Modog500000/ScratchCraft/blob/main/src/resources/block3.png?raw=true)
+
 ### Credits
 Most of this extension was made by peicing parts together and bugtesting.
 
