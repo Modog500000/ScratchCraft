@@ -18,8 +18,10 @@ It should work in other scratch mods as well.
 First things first you will need three things, a scratch project with the extension, a server, and minecraft with CC Tweaked installed.
 
 1. Open a compatible scratch mod, some of these include:
-  Adacraft
-  Turbowarp
+
+ [Adacraft](https://adacraft.org)
+  
+ [Turbowarp](https://turbowarp.org/editor)
 
 2. Click add extensions, scroll to the bottom and click custom extension, then put in the link "https://scratchcraft.modog500000.repl.co/beta.js"
 
