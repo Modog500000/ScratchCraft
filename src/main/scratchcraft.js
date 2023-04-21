@@ -11,6 +11,7 @@
         name: 'ScratchCraft',
         color1: "#f79c25",
         color2: "#db9a2a",
+        docsURI: 'https://github.com/Modog500000/ScratchCraft/wiki',
         blocks: [
           {
             opcode: 'connectPostHTTP',
