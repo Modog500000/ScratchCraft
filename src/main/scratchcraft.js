@@ -1,32 +1,47 @@
-var connected = false
-var ws = ''
-var socket = ''
+
 (function(Scratch) {
-  'use strict';
+  'use strict'
+  var connected = false
+  var ws = ''
+  var SCdata = '';
 
   class ScratchCraft {
-    getInfo () {
+    getInfo() {
       return {
         id: 'scratchcraft',
         name: 'ScratchCraft',
-        color1: "#e6c71c",
-        color2: "#c4ab1a",
+        color1: "#f79c25",
+        color2: "#db9a2a",
         blocks: [
           {
             opcode: 'connectPostHTTP',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'Post HTTP To [URL] with data [DATA]',
+            text: 'Send WS To [URL] with data [DATA]',
             arguments: {
               URL: {
                 type: Scratch.ArgumentType.STRING,
                 defaultValue: 'wss://',
               },
-            DATA: {
+              DATA: {
                 type: Scratch.ArgumentType.STRING,
-                defaultValue: 'return Lorem Ipsum',
+                defaultValue: 'return turtle.forward()',
               },
             },
-            filter: [Scratch.TargetType.SPRITE],
+          },
+          {
+            opcode: 'returnWS',
+            blockType: Scratch.BlockType.COMMAND,
+            text: 'Return [DATA] to [URL]',
+            arguments: {
+              URL: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: 'wss://',
+              },
+              DATA: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: 'turtle.forward()',
+              },
+            },
           },
           {
             opcode: 'connectWS',
@@ -46,59 +61,79 @@ var socket = ''
             arguments: {
               DATA: {
                 type: Scratch.ArgumentType.STRING,
-                defaultValue: 'return Lorem Ipsum',
+                defaultValue: 'return turtle.forward()',
               },
             },
           },
           {
-					 opcode: 'getComState',
-					 blockType: "Boolean",
-					 text: 'Connected?',
-				  },
-          {
-            opcode: 'get',
+            opcode: 'reciveWS',
             blockType: Scratch.BlockType.REPORTER,
-            text: 'GET [URL]',
+            text: 'Recive from [UR',
             arguments: {
               URL: {
                 type: Scratch.ArgumentType.STRING,
-                defaultValue: 'https://extensions.turbowarp.org/hello.txt'
-              }
-            }
-          }
+                defaultValue: 'wss://',
+              },
+            },
+          },
+          {
+            opcode: 'getComState',
+            blockType: "Boolean",
+            text: 'Connected?',
+          },
         ]
       };
     }
-
-    get (args) {
-      return Scratch.fetch(args.URL)
-        .then(r => r.text())
-        .catch(() => '');
-    }
-    connectWS (args) {
-      let ws = new WebSocket(args.URL)
-      ws.onopen = function(e) {
-        ws.send('return sleep(0.05)')
-        console.log('Established Websocket Connection & Sent Data')
-        connected = true
-        return true;
-      }
-    }
-    sendWS (args) {
-      socket.send(args.DATA)
-      return true;
-    }
-    connectPostHTTP (args) {
-      let ws = new WebSocket(args.URL)
+    connectWS(args) {
+      ws = new WebSocket(args.URL)
       ws.onopen = function(e) {
         ws.send(args.DATA)
-        console.log('Established Websocket Connection & Sent Data')
+        connected = true
+        console.log('Established Websocket Connection')
+        return true;
+      }
+    }
+    sendWS(args) {
+      ws.send(args.DATA)
+      return true;
+    }
+    connectPostHTTP(args) {
+      const wso = new WebSocket(args.URL)
+      wso.onopen = function(e) {
+        wso.send(args.DATA)
+        console.log('Established Websocket Connection')
         connected = true
         return true;
       }
     }
-    getComState (args) {
+    returnWS(args) {
+      const ws = new WebSocket(args.URL)
+      ws.onopen = function(e) {
+        let string1 = ""
+        ws.send(''.concat('return ', args.DATA))
+        console.log('Established Websocket Connection')
+        connected = true
+        return true;
+      }
+    }
+    reciveWS(args) {
+      const ws = new WebSocket(args.URL)
+      ws.onopen = function(e) {
+        ws.onmessage = function(event) {
+          SCdata = (`${event.data}`)
+          connected = true
+          return SCdata;
+        }
+      }
+      return SCdata;
+    }
+    getComState(args) {
       return connected;
+    }
+    onClose() {
+        ws.onclose = function(e2) {
+          connected = false;
+      }
     }
   }
   Scratch.extensions.register(new ScratchCraft());
