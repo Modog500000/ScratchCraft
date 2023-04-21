@@ -8,7 +8,7 @@ It should work in other scratch mods as well.
 
 [Adacraft](https://adacraft.org)
 
-[Example project in Adacraft](https://adacraft.org/studio/?project=a8c3a082&extension=https%3A%2F%2Fscratchcraft.modog500000.repl.co%2Fbeta.js)
+[Example project in Adacraft](https://adacraft.org/studio/?project=a8c3a082&extension=https%3A%2F%2Fscratchcraft.modog500000.repl.co%2Fstable.js)
 
 [CC Tweaked](https://tweaked.cc)
 
@@ -23,7 +23,7 @@ First things first you will need three things, a scratch project with the extens
   
  [Turbowarp](https://turbowarp.org/editor)
 
-2. Click add extensions, scroll to the bottom and click custom extension, then put in the link "https://scratchcraft.modog500000.repl.co/beta.js"
+2. Click add extensions, scroll to the bottom and click custom extension, then put in the link "https://scratchcraft.modog500000.repl.co/stable.js"
 
 3. Go to [replit](https://replit.com) and create a new replit, you need to make an account if you dont have one. Make it a Node.Js project. Create
 or edit a file named index.js and add the code from server index.
