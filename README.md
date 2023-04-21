@@ -47,6 +47,18 @@ Block that sends data with return concatenated to the front. TLDR sends a comman
 
 ![block](https://github.com/Modog500000/ScratchCraft/blob/main/src/resources/block3.png?raw=true)
 
+This block connects to a WebSocket server to use in other blocks.
+
+![block](https://github.com/Modog500000/ScratchCraft/blob/main/src/resources/block4.png?raw=true)
+
+This block sends data to the WebSocket saved from the connect block.
+
+![block](https://github.com/Modog500000/ScratchCraft/blob/main/src/resources/block5.png?raw=true)
+
+This block receives data from the WebSocket server.
+
+![block](https://github.com/Modog500000/ScratchCraft/blob/main/src/resources/block6.png?raw=true)
+
 ### Credits
 Most of this extension was made by peicing parts together and bugtesting.
 
