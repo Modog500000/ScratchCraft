@@ -67,7 +67,7 @@
           {
             opcode: 'reciveWS',
             blockType: Scratch.BlockType.REPORTER,
-            text: 'Recive from [UR',
+            text: 'Recive from [URL]',
             arguments: {
               URL: {
                 type: Scratch.ArgumentType.STRING,
