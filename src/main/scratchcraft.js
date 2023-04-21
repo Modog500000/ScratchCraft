@@ -1,4 +1,3 @@
-
 (function(Scratch) {
   'use strict'
   var connected = false
