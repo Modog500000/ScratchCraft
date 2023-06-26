@@ -29,7 +29,7 @@
             },
           },
           {
-            opcode: 'returnWS',
+            opcode: 'returnWSTo',
             blockType: Scratch.BlockType.COMMAND,
             text: 'Return [DATA] to [URL]',
             arguments: {
@@ -57,11 +57,22 @@
           {
             opcode: 'sendWS',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'Send [DATA] to websocket',
+            text: 'Send [DATA]',
             arguments: {
               DATA: {
                 type: Scratch.ArgumentType.STRING,
                 defaultValue: 'return turtle.forward()',
+              },
+            },
+          },
+          {
+            opcode: 'returnWS',
+            blockType: Scratch.BlockType.COMMAND,
+            text: 'Return [DATA]',
+            arguments: {
+              DATA: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: 'turtle.forward()',
               },
             },
           },
@@ -77,6 +88,11 @@
             },
           },
           {
+            opcode: 'disconnect',
+            blockType: Scratch.BlockType.COMMAND,
+            text: 'Disconnect',
+          },
+          {
             opcode: 'getComState',
             blockType: "Boolean",
             text: 'Connected?',
@@ -87,14 +103,23 @@
     connectWS(args) {
       ws = new WebSocket(args.URL)
       ws.onopen = function(e) {
-        ws.send(args.DATA)
         connected = true
         console.log('Established Websocket Connection')
         return true;
       }
+      return false;
+    }
+    disconnect(args) {
+      ws = ''
+      connected = false
+      return true;
     }
     sendWS(args) {
       ws.send(args.DATA)
+      return true;
+    }
+    returnWS(args) {
+        ws.send(''.concat('return ', args.DATA))
       return true;
     }
     connectPostHTTP(args) {
@@ -105,16 +130,17 @@
         connected = true
         return true;
       }
+      return false;
     }
-    returnWS(args) {
-      const ws = new WebSocket(args.URL)
-      ws.onopen = function(e) {
-        let string1 = ""
-        ws.send(''.concat('return ', args.DATA))
+    returnWSTo(args) {
+      const wso = new WebSocket(args.URL)
+      wso.onopen = function(e) {
+        wso.send(''.concat('return ', args.DATA))
         console.log('Established Websocket Connection')
         connected = true
         return true;
       }
+      return false;
     }
     reciveWS(args) {
       const ws = new WebSocket(args.URL)
